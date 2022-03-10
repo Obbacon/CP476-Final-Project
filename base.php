@@ -71,6 +71,7 @@
             mysqli_query($con, $data);
             header("location:index.php");
         }
+        
         /*
          if(!mysqli_query($con,$data)){
             // echo "No Value";
