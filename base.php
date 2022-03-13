@@ -65,15 +65,14 @@
             $Genre=$_POST['igenre'];
             $Release_date=$_POST['iRelease_date'];
 
-            $data = "insert into MovieDB(
-                Movie Name, Director, Movie Genre, Release_Date)
-                values('$Movie_name', '$Director', '$Genre', '$Release_date')";
-            mysqli_query($con, $data);
+            $data = "insert into MovieDB(Movie Name, Director, Movie Genre, Release_Date)
+                     values('$Movie_name', '$Director', '$Genre', '$Release_date')";
+            mysqli_query($connect, $data);
             header("location:index.php");
         }
-        
+
         /*
-         if(!mysqli_query($con,$data)){
+         if(!mysqli_query($connect, $data)){
             // echo "No Value";
          }
          else{
