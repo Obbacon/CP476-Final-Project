@@ -25,7 +25,7 @@
             <div class="form-group" id="Genre">
                 <label>Movie Genre</label>
                 <select class="form-control"
-                    name="igenre">
+                    name="Movie_Genre">
                     <option value="0">
                         Action
                     </option>
@@ -62,10 +62,10 @@
             include("connectToTheDB.php");
             $Movie_name=$_POST['Movie_Name'];
             $Director=$_POST['Director'];
-            $Genre=$_POST['igenre'];
-            $Release_date=$_POST['iRelease_date'];
+            $Genre=$_POST['Movie_Genre'];
+            $Release_date=$_POST['Release_date'];
 
-            $data = "insert into MovieDB(Movie Name, Director, Movie Genre, Release_Date)
+            $data = "insert into MovieDB(Movie_Name, Director, Movie_Genre, Release_Date)
                      values('$Movie_name', '$Director', '$Genre', '$Release_date')";
             mysqli_query($connect, $data);
             header("location:index.php");
