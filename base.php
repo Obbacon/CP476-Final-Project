@@ -65,7 +65,7 @@
             $Genre=$_POST['Movie_Genre'];
             $Release_date=$_POST['Release_date'];
 
-            $data = "insert into MovieDB(Movie_Name, Director, Movie_Genre, Release_Date)
+            $data = "insert into MovieTB(Movie_Name, Director, Movie_Genre, Release_Date)
                      values('$Movie_name', '$Director', '$Genre', '$Release_date')";
             mysqli_query($connect, $data);
             header("location:index.php");
