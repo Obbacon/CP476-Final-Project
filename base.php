@@ -10,9 +10,12 @@
     <div class="container mt-5">
         <h1>Add Movie</h1>
         <form action="base.php" method="POST">
-            <div class="form-group" id="Movie_Name">
+            <div class="form-group"> 
                 <label>Movie name</label>
-                <input type="text" class="form-control" placeholder="Movie name" name="Movie_Name" />
+                <input type="text" 
+                class="form-control" 
+                placeholder="Movie name" 
+                name="iMovie_Name" />
             </div>
 
             <div class="form-group">
@@ -20,32 +23,45 @@
                 <input type="text" 
                     class="form-control" 
                     placeholder="Director" 
-                    name=Director />
+                    name=iDirector />
             </div>
             <div class="form-group" id="Genre">
                 <label>Movie Genre</label>
                 <select class="form-control"
-                    name="Movie_Genre">
-                    <option value="0">
+                    name="iMovie_Genre">
+                    <option value="Action">
                         Action
                     </option>
-                    <option value="1">
+                    <option value="Adventure">
+                        Adventure
+                    </option>
+                    <option value="Action/Sci-Fi">
+                        Action/Sci-Fi
+                    </option>
+                    <option value="Drama">
                         Drama
                     </option>
-                    <option value="2">
+                    <option value="Comedy">
                         Comedy
                     </option>
-                    <option value="3">
+                    <option value="Thriller">
                         Thriller
                     </option>
+                    <option value="Romance">
+                        Romance
+                    </option>
+                    <option value="Mystery">
+                        Mystery
+                    </option>
+
 
                 </select>
             </div>
             <div class="form-group" id="Release_date">
                 <label>Release Date</label>
-                <input type="Release_date"
+                <input type="date"
                     class="form-control"
-                    placeholder="Release_date"
+                    placeholder="Release date"
                     name="iRelease_date">
             </div>
             <div class="form-group" id="Submit_Button">
@@ -60,10 +76,10 @@
     <?php  
         if (isset($_POST["btn"])){
             include("connectToTheDB.php");
-            $Movie_name=$_POST['Movie_Name'];
-            $Director=$_POST['Director'];
-            $Genre=$_POST['Movie_Genre'];
-            $Release_date=$_POST['Release_date'];
+            $Movie_name=$_POST['iMovie_Name'];
+            $Director=$_POST['iDirector'];
+            $Genre=$_POST['iMovie_Genre'];
+            $Release_date=$_POST['iRelease_date'];
 
             $data = "insert into MovieTB(Movie_Name, Director, Movie_Genre, Release_Date)
                      values('$Movie_name', '$Director', '$Genre', '$Release_date')";

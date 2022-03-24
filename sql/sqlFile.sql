@@ -7,3 +7,4 @@ CREATE TABLE MovieTB (MovieID int NOT NULL AUTO_INCREMENT,
                       Release_Date varchar(255) NOT NULL,
                       PRIMARY KEY (MovieID)
                     );
+

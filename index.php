@@ -1,8 +1,8 @@
 <?php
     include("connectToTheDB.php");   
     if (isset($_POST['btn'])) {
-        $date=$_POST['idate'];
-        $data = "select * from MovieTB where Date='$date'";
+        $date=$_POST['iRelease_Date'];
+        $data = "select * from MovieTB where Date='$Release_Date'";
         $query = mysqli_query($connect, $data);
     } 
     else {
@@ -26,10 +26,10 @@
         <div class="row">
             <div class="col-lg-8">
                 <h1>Movie Data</h1>
-                <a href="add.php">Add Movie Here</a>
+                <a href="base.php">Add Movie Here</a>
             </div>
            
-            </div>
+        </div>
         
 
             <div class="row mt-4">
@@ -43,15 +43,22 @@
                             <h4 class="card-title">
                                 <?php echo $var['Movie_Name']; ?>
                             </h4>
-                            <?php echo $var['Director']; ?>
-                            <?php echo $var['Movie_Genre']; ?>
+                            <?php echo $var['Director']; ?><br>
+                            <?php echo $var['Movie_Genre']; ?><br>
                             <?php echo $var['Release_Date']; ?>
-                            
-                        <a href="remove.php?id=<?php echo $var['Id']; ?>" 
-                            class="card-link">Remove </a>
+                         
+                        <!--
                         <a href=
-                        "update.php?id=<?php echo $var['Id']; ?>" 
-                            class="card-link">Update Entry</a>
+                        "remove.php" ?id=<?php echo $var['Id']; ?>
+                            class="card-link">
+                            Remove
+                        </a>
+                        <a href=
+                        "update.php" ?id=<?php echo $var['Id']; ?>
+                            class="card-link">
+                            Update Entry
+                        </a>
+                        -->
                         </div>
                     </div><br>
                 </div>
